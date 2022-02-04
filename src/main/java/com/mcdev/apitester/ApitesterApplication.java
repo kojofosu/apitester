@@ -1,7 +1,9 @@
 package com.mcdev.apitester;
 
 import com.google.gson.Gson;
-import com.mcdev.twitterapikit.response.SpaceResponseList;
+import com.mcdev.twitterapikit.response.SpaceListResponse;
+import com.mcdev.twitterapikit.response.TweetListResponse;
+import com.mcdev.twitterapikit.response.TweetSingleResponse;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import okhttp3.OkHttpClient;
@@ -30,9 +32,11 @@ public class ApitesterApplication {
 	public static void main(String[] args) throws IOException {
 		SpringApplication.run(ApitesterApplication.class, args);
 		ApitesterApplication example = new ApitesterApplication();
-		String response = example.run(UrlConstants.searchSpacesUrl);
+//		String response = example.run(UrlConstants.searchSpacesUrl);
+		String response = example.run(TweetsUrlConstants.searchRecentTweets);
 
-		SpaceResponseList spaceResponseList = new Gson().fromJson(response, SpaceResponseList.class);
+//		SpaceListResponse spaceResponseList = new Gson().fromJson(response, SpaceListResponse.class);
+		TweetListResponse spaceResponseList = new Gson().fromJson(response, TweetListResponse.class);
 		System.out.println(spaceResponseList);
 	}
 
