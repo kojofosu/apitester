@@ -33,10 +33,10 @@ public class ApitesterApplication {
 		SpringApplication.run(ApitesterApplication.class, args);
 		ApitesterApplication example = new ApitesterApplication();
 //		String response = example.run(UrlConstants.searchSpacesUrl);
-		String response = example.run(TweetsUrlConstants.searchRecentTweets);
+		String response = example.run(TweetsUrlConstants.findTweetById);
 
 //		SpaceListResponse spaceResponseList = new Gson().fromJson(response, SpaceListResponse.class);
-		TweetListResponse spaceResponseList = new Gson().fromJson(response, TweetListResponse.class);
+		TweetSingleResponse spaceResponseList = new Gson().fromJson(response, TweetSingleResponse.class);
 		System.out.println(spaceResponseList);
 	}
 
